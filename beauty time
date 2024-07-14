@@ -1,0 +1,33 @@
+def calculate_required_time(improvement_goal, monthly_improvement_rate, period_in_months):
+    # Calculate the total improvement over the given period
+    total_improvement = monthly_improvement_rate * period_in_months
+    
+    # Calculate the required improvement per month to achieve the goal
+    required_improvement_per_month = improvement_goal / period_in_months
+    
+    # Calculate the ratio of the required improvement to the normal improvement rate
+    improvement_ratio = required_improvement_per_month / monthly_improvement_rate
+    
+    # Assume a standard time for facial exercises per day (e.g., 20 minutes)
+    standard_daily_time = 20  # in minutes
+    
+    # Calculate the required daily time based on the improvement ratio
+    required_daily_time = standard_daily_time * improvement_ratio
+    
+    return required_daily_time
+
+def main():
+    # Define the parameters
+    improvement_goal = 15  # in percent
+    monthly_improvement_rate = 3.7  # in percent per month
+    period_in_months = 3  # period to achieve the goal
+    
+    # Calculate the required daily time for facial exercises
+    required_daily_time = calculate_required_time(improvement_goal, monthly_improvement_rate, period_in_months)
+    
+    # Display the result
+    print(f"To improve the quality of your skin by {improvement_goal}% over {period_in_months} months,")
+    print(f"you need to spend approximately {required_daily_time:.2f} minutes per day on facial exercises.")
+
+if __name__ == "__main__":
+    main()
